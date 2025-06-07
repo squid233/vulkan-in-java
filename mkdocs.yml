@@ -9,6 +9,7 @@ site_author: squid233
 nav:
   - 前言: index.md
   - 01-window.md
+  - 02-instance.md
 
 validation:
   omitted_files: warn

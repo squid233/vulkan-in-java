@@ -147,7 +147,7 @@ public void start() {
 `GLFWVidMode::ofNative`方法会帮我们自动`reinterpret`并转换成适合我们操作的类型。当然如果你喜欢也可以这样：
 
 ```java
-MemorySegment vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+MemorySegment vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor()).reinterpret(GLFWVidMode.LAYOUT.byteSize());
 glfwWindowHint(GLFW_POSITION_X, (GLFWVidMode.width(vidMode, 0) - WINDOW_WIDTH) / 2);
 glfwWindowHint(GLFW_POSITION_Y, (GLFWVidMode.height(vidMode, 0) - WINDOW_HEIGHT) / 2);
 ```

@@ -9,6 +9,8 @@
 
 至于 Vulkan 中的概念就看其他教程吧。
 
+本教程源码可在[这里](https://github.com/squid233/vulkan-in-java-src)找到。
+
 ## 啥是 OverrunGL？
 
 请看[这里](https://github.com/Over-Run/overrungl)。简单来说就是像 LWJGL 一样能让你调用 C 函数的库。
