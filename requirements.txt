@@ -2,3 +2,4 @@ pymdown-extensions
 mkdocs-material
 mkdocs-glightbox
 jieba
+mkdocs-panzoom-plugin

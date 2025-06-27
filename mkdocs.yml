@@ -1,3 +1,4 @@
+# $schema: https://www.schemastore.org/mkdocs-1.6.json
 site_name: Vulkan in Java
 site_url: https://squid233.github.io/vulkan-in-java
 repo_url: https://github.com/squid233/vulkan-in-java
@@ -10,6 +11,10 @@ nav:
   - 前言: index.md
   - 01-window.md
   - 02-instance.md
+  - 03-physical-device.md
+
+draft_docs: |
+  03-physical-device.md
 
 validation:
   omitted_files: warn
@@ -85,5 +90,7 @@ markdown_extensions:
 
 plugins:
   - glightbox
+  - panzoom:
+      full_screen: True
   - search:
       separator: '[\s\u200b\-]'

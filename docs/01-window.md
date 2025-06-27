@@ -29,7 +29,7 @@
 | `ofShared`   | 关闭前       | 是      | 是     |
 | `ofAuto`     | 不定（GC 管理） | 否      | 是     |
 
-能手动关闭的`Arena`**必须**关闭，否则会导致内存泄漏。此外，不要滥用 GC 管理的`Arena`，否则你的内存段被 GC 释放掉就成野指针了。
+能手动关闭的`Arena`**必须**关闭，否则会导致内存泄漏。此外，不要滥用 GC 管理的`Arena`，否则你的内存段被 GC 释放掉就成悬挂指针了。
 
 ### Downcall 和 Upcall
 
@@ -207,6 +207,11 @@ public void start() {
 ```
 
 `GLFWErrorCallback::createPrint`创建一个把信息打印到错误输出流的`GLFWErrorFun`。`GLFWErrorFun`属于`Upcall`。我们不打算释放它，因此用`Arena.global()`。
+
+/// admonition | 不要用`Arena.ofAuto()`
+    type: warning
+GC 无法跟踪传递到本机库的内存段，会误认为内存段不再使用。当 GLFW 尝试调用回调时，其所指的内存可能已被释放，从而崩溃。
+///
 
 现在在窗口创建后调用代码测试回调是否正常工作。
 
